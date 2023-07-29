@@ -41,7 +41,7 @@ public class Main {
     List<String>  lines = new ArrayList<>();
 
 
-        System.out.println "This is a program that takes in daily temperatures, stores them in a txt file and allows you to find the average temperature between chosen days");
+        System.out.println "This is a program that takes in daily temperatures, stores them in a txt file and allows you to find the average temperature from the data entered.");
 
         // Check if name has already been entered
         if (!name) {
@@ -57,22 +57,22 @@ public class Main {
         catch(IOException ex) {
             System.out.println("Error: unable to write to file: " + ex.getMessage())
         }
+
         tempCount++;
 
         TempMath tempMath = TempMath(userTemp);
         if (tempCount > 1) {
             System.out.println("Do you wish to find the average of a range of temperatures? Enter 'Y' for yes, anything else for no")
             if (choice == 'Y' || choice == 'y') {
-                while(//file not complete read))
-                    try {
-                        lines = Files.readAllLines(tempLog.toPath())
-                            for (string line : lines) {
-                                String[] tempData = line.split("-");
-                                int num = Integer.parseInt(tempData[0]);
-                                average+=num
-                                math(average, tempCount);
-                            }
-                        }
+                try {
+                    lines = Files.readAllLines(tempLog.toPath())
+                    for (string line : lines) {
+                        String[] tempData = line.split("-");
+                        int num = Integer.parseInt(tempData[0]);
+                        average+=num
+                        math(average, tempCount);
+                    }
+                }
                     catch(IOException ex)){
                         System.out.println("I/O error" + ex.getMessage())
                     }
