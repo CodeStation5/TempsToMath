@@ -15,14 +15,18 @@ public class TempMath {
     private string average;
     private LocalDateTime todayDate;
 
-    public TemperatureMath{
+    public TempMath{
         todayDate = LocalDateTime.now()
         this.temp = temp;
+        this.average = average;
         temps = new ArrayList<Temps>();
     }
     public string Math(int average, tempCount) {
         average = average / tempCount;
         System.out.println ("The average temperatuer is: " + average);
+    }
+    public string todayDate() {
+        return todayDate;
     }
 }
 
@@ -48,7 +52,7 @@ public class Main {
             System.out.println("Enter your name: ")
             name = input.nextLine();
         }
-        System.out.println ("Hello " + name + ", todays date is: " + TempMath(todayDate))
+        System.out.println ("Hello " + name + ", todays date is: " + todayDate(todayDate))
         System.out.print("Enter in todays temperature in Celcius: ")
         String userTemp = input.nextLine();
         try {
